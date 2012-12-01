@@ -1,0 +1,21 @@
+#entry-form-container
+    form( method="post",action="").well.span8
+        h1= title
+        p.subheading Write Something!
+        label Text 
+        textarea(rows="4",style ="width:600px; resize:none;" ,type="text", name="entry_text", id='entry_text-tf').span4.required
+        button(type="submit")#btn-login.btn.btn-primary
+            i.icon-lock.icon-white
+            | Post
+        div.clear-fix
+
+    div.body#entries.well.span8
+        h1 Entries
+        - for (var i = 0; i < entries.length; i++)
+            hr
+            p= entries[i].text_content
+
+script(src='/vendor/jquery.min.js')
+script(src='/vendor/jquery.form.js')
+script(src='/vendor/bootstrap-modal.js')
+script(src='/vendor/bootstrap-transition.js')
